@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SignUpViewController.swift
 //  CineMaxx
 //
 //  Created by Ketevan Barnovi on 19.03.25.
@@ -7,21 +7,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.becomeFirstResponder()
-        emailTextField.keyboardType = .emailAddress
-        passwordTextField.isSecureTextEntry = true
-        
+
         setGradientBackground()
         
+        nameTextField.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        surnameTextField.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         emailTextField.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         passwordTextField.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        confirmPasswordTextField.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        
+        
+        
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Name",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.6)]
+        )
+        
+        surnameTextField.attributedText = NSAttributedString(
+            string: "Surname",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.6)]
+        )
         
         emailTextField.attributedPlaceholder = NSAttributedString(
             string: "Email",
@@ -31,8 +48,14 @@ class ViewController: UIViewController {
         passwordTextField.attributedPlaceholder = NSAttributedString(
             string: "Password",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.6)]
-        ) 
+        )
+        
+        confirmPasswordTextField.attributedText = NSAttributedString(
+            string: "Confirm Password",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.6)]
+        )
     }
+    
 
     
     func setGradientBackground() {
@@ -47,6 +70,3 @@ class ViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
-
-
-
