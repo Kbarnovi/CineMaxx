@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Foy-dg-p3v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DSx-RN-459">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -11,29 +11,29 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CineMaxx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CineMaxx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-Po-y3M">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-NI-seu">
-                                <rect key="frame" x="136.66666666666666" y="159" width="119.99999999999997" height="120"/>
+                                <rect key="frame" x="136.66666666666666" y="203" width="119.99999999999997" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3yD-dB-NL9"/>
                                     <constraint firstAttribute="width" constant="120" id="Sn0-9G-1qq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWu-xy-3iD">
-                                <rect key="frame" x="16" y="329" width="361" height="28.666666666666686"/>
+                                <rect key="frame" x="16" y="373" width="361" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uc1-Y8-Rfr">
-                                <rect key="frame" x="16" y="377.66666666666669" width="361" height="98"/>
+                                <rect key="frame" x="16" y="421.66666666666669" width="361" height="98.000000000000057"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-CE-yTH">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="45"/>
@@ -56,7 +56,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-Dj-5Gr">
-                                <rect key="frame" x="16" y="500.66666666666674" width="361" height="45"/>
+                                <rect key="frame" x="16" y="544.66666666666663" width="361" height="45"/>
                                 <color key="backgroundColor" red="0.74901960779999999" green="0.35294117650000001" blue="0.94901960780000005" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vNh-ns-uu2"/>
@@ -70,6 +70,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2HT-J6-ZIo"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UiL-d9-ZHX">
                                 <rect key="frame" x="86.666666666666686" y="799" width="220" height="29"/>
@@ -87,6 +90,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyP-kt-Bwf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,29 +115,32 @@
                             <constraint firstItem="QWu-xy-3iD" firstAttribute="top" secondItem="2SI-NI-seu" secondAttribute="bottom" constant="50" id="YEl-o8-3dH"/>
                             <constraint firstItem="9cn-Dj-5Gr" firstAttribute="top" secondItem="uc1-Y8-Rfr" secondAttribute="bottom" constant="25" id="fbp-qR-lgR"/>
                             <constraint firstItem="9cn-Dj-5Gr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lEF-pc-bWk"/>
-                            <constraint firstItem="g7M-Po-y3M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lTh-so-PeU"/>
+                            <constraint firstItem="g7M-Po-y3M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-103" id="lTh-so-PeU"/>
                             <constraint firstItem="uc1-Y8-Rfr" firstAttribute="top" secondItem="QWu-xy-3iD" secondAttribute="bottom" constant="20" id="qtB-hF-ETV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0Jz-so-ajD"/>
                     <connections>
                         <outlet property="EmailTextField" destination="SSc-CE-yTH" id="7PT-Fx-Q6P"/>
                         <outlet property="PasswordTextField" destination="w29-jO-qS8" id="dZ4-dg-cKX"/>
+                        <outlet property="emailTextField" destination="SSc-CE-yTH" id="y6d-ZZ-ROt"/>
+                        <outlet property="passwordTextField" destination="w29-jO-qS8" id="a1Z-NB-P6o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1904.5801526717557" y="3.5211267605633805"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Q1R-sO-Kpm">
             <objects>
-                <viewController id="Foy-dg-p3v" customClass="SignUpViewController" customModule="CineMaxx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="Foy-dg-p3v" customClass="SignUpViewController" customModule="CineMaxx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RY3-jO-OPG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ktC-fF-aD9">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-cf-jKD">
                                 <rect key="frame" x="136.66666666666666" y="159" width="119.99999999999997" height="120"/>
@@ -211,6 +220,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="Foy-dg-p3v" eventType="touchUpInside" id="o4Z-0v-Qm9"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-u7-4XV">
                                 <rect key="frame" x="109.66666666666669" y="799" width="174" height="29"/>
@@ -228,6 +240,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="Foy-dg-p3v" eventType="touchUpInside" id="3ag-FU-j2b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -248,12 +263,13 @@
                             <constraint firstItem="4qd-cf-jKD" firstAttribute="top" secondItem="6qN-Rx-VgW" secondAttribute="top" constant="100" id="gXP-3u-f9k"/>
                             <constraint firstItem="aLF-N5-qqT" firstAttribute="top" secondItem="hUE-vy-eFF" secondAttribute="bottom" constant="20" id="gaw-X1-YLm"/>
                             <constraint firstItem="4qd-cf-jKD" firstAttribute="centerX" secondItem="RY3-jO-OPG" secondAttribute="centerX" id="iu4-DQ-rwe"/>
-                            <constraint firstItem="ktC-fF-aD9" firstAttribute="top" secondItem="6qN-Rx-VgW" secondAttribute="top" id="jkY-u6-L6p"/>
+                            <constraint firstItem="ktC-fF-aD9" firstAttribute="top" secondItem="6qN-Rx-VgW" secondAttribute="top" constant="-59" id="jkY-u6-L6p"/>
                             <constraint firstItem="Ovc-u7-4XV" firstAttribute="centerX" secondItem="RY3-jO-OPG" secondAttribute="centerX" id="mWF-Jc-O3x"/>
                             <constraint firstItem="4pF-Ls-HF7" firstAttribute="leading" secondItem="6qN-Rx-VgW" secondAttribute="leading" constant="16" id="nuD-J0-vrQ"/>
                             <constraint firstItem="Ovc-u7-4XV" firstAttribute="bottom" secondItem="6qN-Rx-VgW" secondAttribute="bottom" constant="10" id="qBT-Yz-pGp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5t0-w7-of8"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="fop-Cc-hVG" id="qp5-Kz-OrX"/>
                         <outlet property="emailTextField" destination="Nps-EM-cCO" id="y0W-QI-kSu"/>
@@ -264,7 +280,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UH3-CF-TyM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="4"/>
+            <point key="canvasLocation" x="2667.93893129771" y="3.5211267605633805"/>
+        </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="U99-Tv-5kU">
+            <objects>
+                <viewController storyboardIdentifier="HomePageViewController" id="T1e-0G-imZ" customClass="HomePageViewController" customModule="CineMaxx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1KC-G1-O7y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-9p-oR0">
+                                <rect key="frame" x="0.0" y="-205" width="428" height="1349"/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.56674254966887416" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rjD-IQ-wao"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qjd-9p-oR0" firstAttribute="centerX" secondItem="1KC-G1-O7y" secondAttribute="centerX" constant="17.5" id="Zzr-Aj-2Cm"/>
+                            <constraint firstItem="qjd-9p-oR0" firstAttribute="centerY" secondItem="1KC-G1-O7y" secondAttribute="centerY" constant="43.5" id="yan-O3-hz4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNC-IV-RHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3396.1832061068699" y="3.5211267605633805"/>
+        </scene>
+        <!--Detail Page View Controller-->
+        <scene sceneID="vjn-0d-te9">
+            <objects>
+                <viewController storyboardIdentifier="DetailPageViewController" id="WFY-11-OaQ" customClass="DetailPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z9E-kx-1wz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QHA-me-Iox"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lo2-9t-RZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4095.419847328244" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aSN-3M-3aq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DSx-RN-459" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yjf-oP-jVz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ilS-0E-AS7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5D-ri-Sh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.885496183206" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
