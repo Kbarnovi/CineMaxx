@@ -8,28 +8,46 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-
-
-    @IBOutlet weak var CollectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    var movies: Welcome?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CollectionView.dataSource = self
         
+        collectionView.dataSource = self
         
+        fetchMovies()
+    }
+    
+    
+    private func fetchMovies() {
+        Task {
+            if let fetchedMovies = await fetchWelcomeMessage() {
+                updateUI(with: fetchedMovies)
+            }
+        }
+    }
+    
+    private func updateUI(with movies: Welcome) {
+        DispatchQueue.main.async {
+            self.movies = movies
+            self.collectionView.reloadData()
+        }
     }
     
 }
 
 extension HomePageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count//it returns as much cell as we have in our movies's file
+        return movies?.results.count ?? 0  // Prevents crash if movies is nil
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let movies = movies else { return UICollectionViewCell() }  // Ensure movies is not nil
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCollectionViewCell", for: indexPath) as! HomePageCollectionViewCell
-        cell.setup(with: movies[indexPath.row])
+        cell.setup(with: movies.results[indexPath.row])
         return cell
     }
 }
+
