@@ -8,13 +8,11 @@
 import UIKit
 
 class HomePageCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var movieTitleView: UILabel!
     
     func setup(with movie: Result) {
-        print(movie.posterPath)
-        imageView.loadImage(from: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
+        imageView.loadImage(from: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")
         movieTitleView.text = movie.title
     }
 }
