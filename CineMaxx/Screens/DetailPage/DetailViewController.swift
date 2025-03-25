@@ -32,7 +32,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         detailCollectionView.collectionViewLayout = layout
 
         movieDescription.numberOfLines = 0
-        movieDescription.frame = CGRectMake(0,50,360,100)
+        movieDescription.frame = CGRectMake(0,0,360,100)
 
         
         // Now that the view is loaded, call setup
@@ -81,6 +81,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 225*0.6667, height: 225)
+        return CGSize(width: 225*0.6667, height: 200)
     }
 }
