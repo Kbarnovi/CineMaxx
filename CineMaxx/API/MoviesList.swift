@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct GetMoviesResponse: Codable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int

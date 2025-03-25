@@ -9,7 +9,7 @@ import UIKit
 
 class HomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
-    var movies: Welcome?
+    var movies: GetMoviesResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,13 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     private func fetchMovies() {
         Task {
-            if let fetchedMovies = await fetchWelcomeMessage() {
+            if let fetchedMovies = await getMoviesByGenre(genreID: 35) {
                 updateUI(with: fetchedMovies)
             }
         }
     }
     
-    private func updateUI(with movies: Welcome) {
+    private func updateUI(with movies: GetMoviesResponse) {
         DispatchQueue.main.async {
             self.movies = movies
             self.collectionView.reloadData()
