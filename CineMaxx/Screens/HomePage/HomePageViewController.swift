@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     var movies: GetMoviesResponse?
     
@@ -16,6 +16,11 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        collectionView.collectionViewLayout = layout
         
         fetchMovies()
     }
@@ -64,6 +69,14 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.setup(with: movies.results[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5) // Adjust leading and trailing space
     }
 }
 

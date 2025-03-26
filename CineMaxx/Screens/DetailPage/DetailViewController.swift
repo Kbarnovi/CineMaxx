@@ -13,9 +13,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var releaseDate: UILabel!
-    @IBOutlet weak var movieDescription: UILabel!
     @IBOutlet weak var detailCollectionView: UICollectionView!
     
+    @IBOutlet weak var movieDescription: UITextView!
     @IBOutlet weak var blurredImage: UIImageView!
     var backgroundImageView: UIImageView!
     
@@ -33,10 +33,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         layout.scrollDirection = .horizontal
         
         detailCollectionView.collectionViewLayout = layout
-        
-//        movieDescription.numberOfLines = 0
-//        movieDescription.frame = CGRectMake(0,0,360,100)
-        
         
         
         blurredImage.frame = view.bounds

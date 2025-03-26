@@ -472,34 +472,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="long description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP8-2I-pS4">
-                                        <rect key="frame" x="0.0" y="88.333333333333314" width="361" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="lGe-2H-9lO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt4-Md-q7x">
                                         <rect key="frame" x="0.0" y="195" width="35" height="19.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA1-hi-2i3">
+                                        <rect key="frame" x="0.0" y="88.333333333333314" width="361" height="86.666666666666686"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Jt4-Md-q7x" firstAttribute="centerY" secondItem="ZDq-qZ-uwq" secondAttribute="centerY" constant="57.166666666666686" id="677-wX-XGN"/>
-                                    <constraint firstAttribute="trailing" secondItem="yP8-2I-pS4" secondAttribute="trailing" id="BCc-cj-PKO"/>
+                                    <constraint firstAttribute="trailing" secondItem="lA1-hi-2i3" secondAttribute="trailing" id="AS7-HK-CQF"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jcf-lm-SEb" secondAttribute="trailing" constant="20" symbolic="YES" id="EMd-r9-anB"/>
+                                    <constraint firstItem="lA1-hi-2i3" firstAttribute="top" secondItem="Jcf-lm-SEb" secondAttribute="bottom" constant="5" id="K4R-MU-6g6"/>
                                     <constraint firstAttribute="trailing" secondItem="MbD-7c-SCg" secondAttribute="trailing" id="NvG-Hi-HHh"/>
-                                    <constraint firstItem="b0M-Nn-GrJ" firstAttribute="leading" secondItem="yP8-2I-pS4" secondAttribute="leading" id="Qbo-Jn-uWU"/>
+                                    <constraint firstAttribute="bottom" secondItem="lA1-hi-2i3" secondAttribute="bottom" constant="120" id="Q1G-3k-DSw"/>
                                     <constraint firstItem="Jcf-lm-SEb" firstAttribute="top" secondItem="b0M-Nn-GrJ" secondAttribute="bottom" constant="30" id="Vt5-dM-mbp"/>
                                     <constraint firstItem="Jt4-Md-q7x" firstAttribute="centerX" secondItem="ZDq-qZ-uwq" secondAttribute="centerX" constant="-163" id="WXz-sa-V7W"/>
                                     <constraint firstItem="b0M-Nn-GrJ" firstAttribute="leading" secondItem="Jcf-lm-SEb" secondAttribute="leading" id="kg3-wv-Sn3"/>
+                                    <constraint firstItem="lA1-hi-2i3" firstAttribute="leading" secondItem="ZDq-qZ-uwq" secondAttribute="leading" id="n4f-66-ITA"/>
                                     <constraint firstItem="b0M-Nn-GrJ" firstAttribute="top" secondItem="ZDq-qZ-uwq" secondAttribute="top" constant="10" id="pfv-1j-cgf"/>
                                     <constraint firstItem="MbD-7c-SCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b0M-Nn-GrJ" secondAttribute="trailing" constant="8" symbolic="YES" id="tk9-l0-D9K"/>
-                                    <constraint firstItem="yP8-2I-pS4" firstAttribute="top" secondItem="Jcf-lm-SEb" secondAttribute="bottom" constant="5" id="tqy-3z-CaH"/>
                                     <constraint firstItem="b0M-Nn-GrJ" firstAttribute="leading" secondItem="ZDq-qZ-uwq" secondAttribute="leading" id="uAX-N0-hKK"/>
                                     <constraint firstItem="b0M-Nn-GrJ" firstAttribute="top" secondItem="MbD-7c-SCg" secondAttribute="top" id="w5I-xO-Se0"/>
                                 </constraints>
@@ -525,7 +525,7 @@
                     <connections>
                         <outlet property="blurredImage" destination="G35-SI-RT3" id="Qa7-jG-ada"/>
                         <outlet property="detailCollectionView" destination="ua0-wm-Dd5" id="sFi-sS-XnV"/>
-                        <outlet property="movieDescription" destination="yP8-2I-pS4" id="lhD-wc-etU"/>
+                        <outlet property="movieDescription" destination="lA1-hi-2i3" id="mCI-HQ-HeU"/>
                         <outlet property="movieImage" destination="fYO-ll-Y8v" id="J6O-s5-vCK"/>
                         <outlet property="movieTitle" destination="b0M-Nn-GrJ" id="V6d-J7-Y16"/>
                         <outlet property="releaseDate" destination="MbD-7c-SCg" id="vQE-T2-Fco"/>
@@ -557,6 +557,9 @@
     <resources>
         <image name="Logo" width="240" height="240"/>
         <image name="background" width="750" height="1624"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
