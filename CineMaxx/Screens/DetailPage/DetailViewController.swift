@@ -16,6 +16,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var movieDescription: UILabel!
     @IBOutlet weak var detailCollectionView: UICollectionView!
     
+    @IBOutlet weak var blurredImage: UIImageView!
+    var backgroundImageView: UIImageView!
+    
     
     var movie: Result?  // Store the movie data
     var cast: CastResponse?  // Store the movie data
@@ -28,12 +31,21 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         detailCollectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-
+        
         detailCollectionView.collectionViewLayout = layout
-
-        movieDescription.numberOfLines = 0
-        movieDescription.frame = CGRectMake(0,0,360,100)
-
+        
+//        movieDescription.numberOfLines = 0
+//        movieDescription.frame = CGRectMake(0,0,360,100)
+        
+        
+        
+        blurredImage.frame = view.bounds
+        blurredImage.contentMode = .scaleAspectFill
+        
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurEffectView.frame = view.bounds
+        blurredImage.addSubview(blurEffectView)
+        
         
         // Now that the view is loaded, call setup
         if let movie = movie {
@@ -60,11 +72,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func setup(with movie: Result) {
         movieImage.loadImage(from: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")
+        blurredImage.loadImage(from: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")
         movieTitle.text = movie.title
         movieDescription.text = movie.overview
         releaseDate.text = movie.releaseDate
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cast?.cast.count ?? 0  // Prevents crash if movies is nil
@@ -81,6 +94,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 225*0.6667, height: 200)
+        return CGSize(width: 170*0.6667, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) // Adjust leading and trailing space
     }
 }
